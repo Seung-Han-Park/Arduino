@@ -84,14 +84,16 @@ void loop() {
 
 int state = 0;
 
-void setup() {
+void setup()
+{
   Serial.begin(9600);
   pinMode(BUTTON, INPUT_PULLUP);
   pinMode(LED_BLUE, OUTPUT);
   pinMode(LED_RED, OUTPUT);  
 }
 
-void loop() {
+void loop()
+{
   int buttonValue = !digitalRead(BUTTON);
 
   if (buttonValue == 1)
