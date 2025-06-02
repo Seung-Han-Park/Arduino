@@ -50,7 +50,8 @@ void loop() {
 ![](./images/led01.png)
 
 ```c
-#define LED1 9 #define LED2 8 
+#define LED1 9
+#define LED2 8 
 #define LED3 7 
 
 void setup() {
