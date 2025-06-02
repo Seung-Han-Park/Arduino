@@ -50,9 +50,9 @@ void loop() {
 ![](./images/led01.png)
 
 ```c
-#define LED1 9
-#define LED2 8
-#define LED3 7
+#define LED1 9 // 숫자 하나 정하여 기입
+#define LED2 8 // 숫자 하나 정하여 기입
+#define LED3 7 // 숫자 하나 정하여 기입
 
 void setup() {
   pinMode (LED1, OUTPUT);
