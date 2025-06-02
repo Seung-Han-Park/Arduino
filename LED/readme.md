@@ -175,3 +175,24 @@ digitalWrite(CAR_LED_RED, HIGH);
   delay(500);
 }
 ```
+
+## 스탠드 LED (가변저항 사용) Source code
+
+![](./images/led04.png)
+
+```c
+#define LED 9
+#define VR A0
+
+void setup(){
+  Serial.begin(9600);
+}
+
+void loop(){
+  int analogValue = analogRead(VR);
+  int analogMapping = map(analogValue, 0, 1023, 0, 255);
+  
+  analogWrite(LED, analogMapping);
+}
+
+```
