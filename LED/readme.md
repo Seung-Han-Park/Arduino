@@ -94,12 +94,14 @@ void setup() {
 void loop() {
   int buttonValue = !digitalRead(BUTTON);
 
-  if (buttonValue == 1) {
+  if (buttonValue == 1)
+  {
     state = !state;
     delay(500);
   }
 
-  if (state == 0) {
+  if (state == 0)
+  {
     digitalWrite(LED_BLUE, HIGH); 
     digitalWrite(LED_RED, LOW);  
     delay(DELAY_TIME);            
@@ -107,7 +109,9 @@ void loop() {
     digitalWrite(LED_BLUE, LOW);  
     delay(DELAY_TIME);            
   }
-  else if (state == 1) {
+
+  else if (state == 1)
+  {
     digitalWrite(LED_BLUE, LOW); 
     digitalWrite(LED_RED, LOW);  
   }
