@@ -64,10 +64,10 @@ void loop() {
   digitalWrite (LED1, HIGH);
   digitalWrite (LED2, HIGH);
   digitalWrite (LED3, HIGH);
-  delay (1000);
+  delay (1000); // 1000 = 1초
   digitalWrite (LED1, LOW);
   digitalWrite (LED2, LOW);
   digitalWrite (LED3, LOW);
-  delay (1000);
+  delay (1000); // 1000 = 1초
 }
 ```
