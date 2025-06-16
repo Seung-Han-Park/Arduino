@@ -3,7 +3,7 @@
 
 ![](./images/buzzer02.png)
 
-## 버튼 음으로 출력하기 Source code
+## 02) 버튼 음으로 출력하기 Source code
 
 ```c
 #define PIEZO_BUZZER 2
