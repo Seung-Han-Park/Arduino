@@ -25,7 +25,7 @@ void loop()
 
 ![](./images/lcd02.png)
 
-## 2-2. I2C LCD를 이용한 문자열 출력 Source code
+## 2-2. I2C LCD를 이용한 문자열 출력 Source code (Ver. Thinkercad) 
 
 ```c
 #include <Adafruit_LiquidCrystal.h>
@@ -53,4 +53,32 @@ void loop() {
   seconds += 1;                    
 }
 
+```
+
+## 2-3. I2C LCD를 이용한 문자열 출력 Source code (Ver. Arduino IDE) 
+
+```c
+#include <LiquidCrystal_I2C.h>
+
+int seconds = 0;
+
+LiquidCrystal_I2C lcd (0x27, 16, 2);
+
+void setup()
+{
+  lcd.init();
+  lcd.backlight();
+  lcd.print("Hello, world");
+}
+
+void loop()
+{
+  lcd.setCursor (0,1);
+  lcd.print (seconds);
+  lcd.setBacklight (1);
+  delay (500);
+  lcd.setBacklight (0);
+  delay (500);
+  seconds += 1;
+}
 ```
