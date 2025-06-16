@@ -1,9 +1,9 @@
 # BUZZER
-## 2. 버튼 음으로 출력하기
+## 2-1. 버튼 음으로 출력하기
 
 ![](./images/buzzer02.png)
 
-## 2-1. 버튼 음으로 출력하기 Source code
+## 2-2. 버튼 음으로 출력하기 Source code
 
 ```c
 #define PIEZO_BUZZER 2
