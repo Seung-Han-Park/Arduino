@@ -158,6 +158,7 @@ void loop()
 ```
 
 ## 4-1. DC Motor(3)
+※버튼을 누르면 모터가 반대 방향으로 회전
 
 ![](./images/sensor05.png)
 
