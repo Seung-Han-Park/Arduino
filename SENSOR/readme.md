@@ -101,11 +101,11 @@ void loop()
 }
 ```
 
-## 3-1. DC Motor
+## 3-1. DC Motor(1)
 
 ![](./images/sensor03.png)
 
-## 3-2. DC Motor - Source code
+## 3-2. DC Motor(1) - Source code
 
 ```c
 void setup() 
@@ -122,4 +122,37 @@ void loop()
   analogWrite(9, convertedValue);
   delay(100);
 }
+```
+
+## 3-1. DC Motor(2)
+
+![](./images/sensor04.png)
+
+## 3-2. DC Motor(2) - Source code
+
+```c
+void setup() 
+{
+  pinMode(9, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(8, INPUT);
+}
+void loop()
+{
+  int inputValue = analogRead(A0);
+  Serial.println(inputValue);
+  int convertedValue = map(inputValue, 0, 1023, 0, 255);
+
+  int inputSwitch = digitalRead(8);
+  if(inputSwitch == LOW) {	
+    analogWrite(9, convertedValue);
+    analogWrite(10, 0);
+  }
+  else {
+    analogWrite(9, 0);
+    analogWrite(10, convertedValue);
+  }   
+  delay(100);
+}
+
 ```
