@@ -296,7 +296,7 @@ void speedControl() {
 
 ![](./images/sensor07.png)
 
-## 5-2. Micro Servo(1) - Source code
+## 6-2. Micro Servo(1) - Source code
 
 ```c
 #include <Servo.h>
@@ -323,6 +323,36 @@ void loop()
     servo_9.write(pos);
     // wait 15 ms for servo to reach the position
     delay(15); // Wait for 15 millisecond(s)
+  }
+}
+```
+
+## 7-1. Micro Servo(2)
+※  서보 모터가 0도에서 180도 사이를 연속적으로 왕복
+
+![](./images/sensor08.png)
+
+## 7-2. Micro Servo(2) - Source code
+
+```c
+#include <Servo.h> //use library <Servo.h> (1m)
+Servo myservo; //name the pin of servo motor as myservo (1m)
+
+//int angle = 0; //current angle
+//int direc = 0; //currrent direction;0=clockwise;1=anti-clockwise
+
+void setup(){
+  myservo.attach(6); //pwm to D6
+}
+
+void loop(){
+  for(int ang=0; ang<180; ang++){ //clockwise
+    myservo.write(ang); //rotate pin of servo motor (1m) 
+    delay(50); //for 0.05 second (1m)
+  }
+  for(int ang=180; ang>0; ang--){ //anti-clockwise
+    myservo.write(ang);
+    delay(50);
   }
 }
 ```
