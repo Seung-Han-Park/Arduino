@@ -126,7 +126,7 @@ void loop()
 
 ## 3-1. DC Motor(2)
 
-![](./images/sensor04.png)
+![](./images/sensor4.png)
 
 ## 3-2. DC Motor(2) - Source code
 
