@@ -378,3 +378,85 @@ void loop () {
 }
 
 ```
+## 9-1. Micro Servo(4)
+※  9부터 0까지 카운트다운 후 경적
+
+![](./images/sensor10.png)
+
+## 9-2. Micro Servo(4) - Source code
+
+```c
+int index = 0;
+
+int counter;
+
+String pattern[]=
+{   
+"00100001",   
+"11111001",   
+"00010011",   
+"01010001",   
+"11001001",   
+"01000101",   
+"00000101",   
+"11110001",   
+"00000001",   
+"01000001",   
+}; 
+ 
+void clear()
+{
+  index = 0;
+  for (counter = 0; counter < 8; ++counter) {
+    analogWrite(index+2, 255);
+    index++;
+  }
+}
+void display(int num)
+{
+  clear();
+  index = 0;
+  for (counter = 0; counter < 8; ++counter) {
+    if (pattern[num].substring(index,index+1)=="0"){
+      analogWrite(index+2, 0);
+    }
+    index++;
+  }
+}
+
+void setup()
+{
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(8, OUTPUT);	
+  pinMode(9, OUTPUT);
+display(9);
+  delay(1000);
+  display(8);
+  delay(1000);
+  display(7);
+  delay(1000);
+  display(6);
+  delay(1000);
+  display(5);
+  delay(1000);
+  display(4);
+  delay(1000);
+  display(3);
+  delay(1000);
+  display(2);
+  delay(1000);
+  display(1);
+  delay(1000);
+  display(0);
+  tone(10,523,500);
+}
+
+void loop()
+{
+}
+```
