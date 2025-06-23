@@ -356,3 +356,25 @@ void loop(){
   }
 }
 ```
+## 8-1. Micro Servo(3)
+※  가변저항(전위차계)을 돌려 서보 모터 각도를 제어
+
+![](./images/sensor09.png)
+
+## 8-2. Micro Servo(3) - Source code
+
+```c
+#include <Servo.h>
+Servo servoMotor;
+int potPos;
+
+void setup() {
+  servoMotor.attach(9);
+}
+void loop () {
+  potPos = map(analogRead(A0), 0, 1023, 0, 180);
+  servoMotor.write(potPos);
+  delay(15);
+}
+
+```
