@@ -156,3 +156,36 @@ void loop()
 }
 
 ```
+
+## 4-1. DC Motor(3)
+
+![](./images/sensor05.png)
+
+## 4-2. DC Motor(3) - Source code
+
+```c
+const int MOTOR_PIN_A = 5;
+const int MOTOR_PIN_B = 6;
+
+void setup() 
+{
+  pinMode(MOTOR_PIN_A, OUTPUT);
+  pinMode(MOTOR_PIN_B, OUTPUT);
+}
+void loop()
+{
+  int readValue = digitalRead(4);
+
+  if(readValue == LOW) {	
+    analogWrite(MOTOR_PIN_A, 255);
+    analogWrite(MOTOR_PIN_B, 0);
+  }
+  else {
+    analogWrite(MOTOR_PIN_A, 0);
+    analogWrite(MOTOR_PIN_B, 255);
+  }   
+  delay(100);
+}
+
+
+```
