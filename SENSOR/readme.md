@@ -378,12 +378,12 @@ void loop () {
 }
 
 ```
-## 9-1. Micro Servo(4)
+## 9-1. 7-segment display(ca): Count Down Alarm
 ※  9부터 0까지 카운트다운 후 경적
 
 ![](./images/sensor10.png)
 
-## 9-2. Micro Servo(4) - Source code
+## 9-2. 7-segment display(ca): Count Down Alarm - Source code
 
 ```c
 int index = 0;
