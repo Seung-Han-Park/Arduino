@@ -191,3 +191,37 @@ void loop()
 
 
 ```
+
+## 5-1. DC Motor(4)
+※  L298N 모터 드라이버(H-브리지 모터 드라이버) 모듈을 사용한 두개의 DC 모터를 제어
+
+![](./images/sensor06.png)
+
+## 5-2. DC Motor(4) - Source code
+
+```c
+const int MOTOR_PIN_A = 5;
+const int MOTOR_PIN_B = 6;
+
+void setup() 
+{
+  pinMode(MOTOR_PIN_A, OUTPUT);
+  pinMode(MOTOR_PIN_B, OUTPUT);
+}
+void loop()
+{
+  int readValue = digitalRead(4);
+
+  if(readValue == LOW) {	
+    analogWrite(MOTOR_PIN_A, 255);
+    analogWrite(MOTOR_PIN_B, 0);
+  }
+  else {
+    analogWrite(MOTOR_PIN_A, 0);
+    analogWrite(MOTOR_PIN_B, 255);
+  }   
+  delay(100);
+}
+
+
+```
