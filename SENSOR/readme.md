@@ -105,7 +105,7 @@ void loop()
 
 ![](./images/sensor03.png)
 
-## 2-2. DC Motor - Source code
+## 3-2. DC Motor - Source code
 
 ```c
 void setup() 
