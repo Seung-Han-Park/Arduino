@@ -64,7 +64,7 @@ void loop ()
 
 ![](./images/sensor02.png)
 
-## 2-2. Ultrasonic sensor and 12C LCD, Source code
+## 2-2. Ultrasonic sensor and 12C LCD - Source code
 
 ```c
 #include <Adafruit_LiquidCrystal.h>
@@ -98,5 +98,28 @@ void loop()
   lcd_1.print(distance);
   lcd_1.print(" cm - Andrea");
   delay(500);
+}
+```
+
+## 3-1. DC Motor
+
+![](./images/sensor03.png)
+
+## 2-2. DC Motor - Source code
+
+```c
+void setup() 
+{
+  pinMode(9, OUTPUT);
+}
+void loop()
+{
+  Serial.begin(9600);
+  int inputValue = analogRead(A0);
+  Serial.println(inputValue);
+  int convertedValue = map(inputValue, 0, 1023, 0, 255);
+
+  analogWrite(9, convertedValue);
+  delay(100);
 }
 ```
